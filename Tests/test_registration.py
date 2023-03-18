@@ -17,6 +17,7 @@ def test_successful_registration() :
 
 def test_unsuccessful_registration() :
     middlename="anil"
+    name="Sumit"
     path = "api/register"
     response = requests.post(url=baseUrl+path,json=json.loads('{"email": "testemail@pytest.com"}'))
     responseJson = json.loads(response.text)
