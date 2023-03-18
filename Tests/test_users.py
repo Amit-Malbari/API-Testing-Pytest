@@ -6,6 +6,7 @@ baseUrl = "https://reqres.in/"
 
 def test_fetch_user() :
     name="amit"
+    roll_nu="78"
     role="mle"
     path = "api/users/2"
     response = requests.get(url=baseUrl+path)
@@ -17,6 +18,7 @@ def test_fetch_user() :
     
 
 def test_create_delete_user() :
+    name="testing"
     file = open('TestData/user.json',"r")
     path = "api/users"
     inputData = json.loads(file.read())
