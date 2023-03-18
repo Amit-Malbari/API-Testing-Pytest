@@ -6,13 +6,15 @@ baseUrl = "https://reqres.in/"
 
 def test_fetch_user() :
     name="amit"
+    role="mle"
     path = "api/users/2"
     response = requests.get(url=baseUrl+path)
     responseJson = json.loads(response.text)
     assert response.status_code == 200
     assert jsonpath.jsonpath(responseJson,'$.data.first_name')[0] == 'Janet'
     assert jsonpath.jsonpath(responseJson,'$.data.id')[0] == 2
-
+    print("mle")
+    
 
 def test_create_delete_user() :
     file = open('TestData/user.json',"r")
